@@ -17,6 +17,9 @@ class Search extends Component {
     selectedBeer: null
   }
 
+  //on form submission, axios calls the API using the search property
+  //in state, then sets the response to the results property in state
+  //and clears te search bar and sets the selected beer property back to null
   handleSubmit = () => {
     axios.get(`https://api.punkapi.com/v2/beers/?beer_name=${this.state.search}`)
     .then((response) => {
@@ -34,18 +37,23 @@ class Search extends Component {
     })
   };
 
+  // when something is typed in the search bar, this makes the input
+  // controlled by state.
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
   };
 
+  //when the user clicks on one of the results return by the API,
+  //this clears the results property and sets the selectedBeer property
+  //to the beer that has been clicked
   handleClick = (beer) => {
     this.setState({
       results: null,
       selectedBeer: beer
     })
-  }
+  };
 
   render() {
 
@@ -94,7 +102,7 @@ class Search extends Component {
                 height="200" width="auto" style={{margin: 'auto', marginTop: '15px'}}/>
                 <ul>
                   <li>{this.state.selectedBeer.name}</li>
-                  <li>{this.state.selectedBeer.tagline}</li>
+                  <li>"{this.state.selectedBeer.tagline}"</li>
                   <li>Abv: {this.state.selectedBeer.abv}</li>
                   <li>First Brewed: {this.state.selectedBeer.first_brewed}</li>
                 </ul>
