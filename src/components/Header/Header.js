@@ -6,20 +6,18 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-class Nav extends Component {
+class Header extends Component {
 
   render() {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <AppBar className={classes.nav} position="fixed">
+      <div>
+        <AppBar className={classes.bar} position="fixed">
           <Toolbar>
             <Typography className={classes.title} variant="h4">
               Beery_Query
             </Typography>
-  
-            <div className={classes.grow} />
           </Toolbar>
         </AppBar>
       </div>
@@ -28,17 +26,7 @@ class Nav extends Component {
 };
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  image: {
-    height: '2.125rem',
-    marginRight: 10
-  },
-  nav: {
+  bar: {
     overflow: 'hidden',
     backgroundColor: 'maroon',
   },
@@ -50,4 +38,4 @@ const styles = {
 
 
 
-export default withStyles(styles)(Nav);
+export default withStyles(styles)(Header);

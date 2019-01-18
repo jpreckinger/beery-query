@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
 
-class App extends Component {
+class ViewResults extends Component {
+
+  componentDidMount() {
+    console.log('view');
+  }
+
   render() {
     return (
-      <div className="App">
-        <p>View</p>
+      <div>
+        <input />
       </div>
     );
   }
 }
 
-export default App;
+export default ViewResults;
