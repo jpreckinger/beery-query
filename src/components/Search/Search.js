@@ -23,7 +23,6 @@ class Search extends Component {
   handleSubmit = () => {
     axios.get(`https://api.punkapi.com/v2/beers/?beer_name=${this.state.search}`)
     .then((response) => {
-      console.log(response);
       this.setState({
         results: response.data
       })
