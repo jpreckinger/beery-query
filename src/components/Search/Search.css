@@ -10,3 +10,15 @@
   position: fixed;
   top: 30%;
 }
+
+.selected{
+  position: fixed;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.position{
+  display: flex;
+  justify-content: center;
+}

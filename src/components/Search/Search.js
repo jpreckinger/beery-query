@@ -83,13 +83,17 @@ class Search extends Component {
             </div>
           }
         </div>
-        <div>
+        <div className='position'>
           {this.state.selectedBeer &&
-          <div>
-            <img src={this.state.selectedBeer.image_url} height="200" width="auto"/>
+          <div className='selected'>
+            <img 
+            src={this.state.selectedBeer.image_url}
+            alt={this.state.selectedBeer.description} 
+            height="200" width="auto"/>
             <ul>
               <li>{this.state.selectedBeer.name}</li>
-              <li>{this.state.selectedBeer.abv}</li>
+              <li>{this.state.selectedBeer.tagline}</li>
+              <li>Abv: {this.state.selectedBeer.abv}</li>
               {/* <li>{this.state.selectedBeer}</li>
               <li>{this.state.selectedBeer}</li> */}
             </ul>
@@ -108,7 +112,6 @@ const styles = {
   card: {
     width: 200,
     height: 200,
-    backgroundColor: 'gray'
   },
   list: {
     display: 'flex',
@@ -118,6 +121,9 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
+  },
+  display: {
+    display: 'inline-block'
   }
 
 };
