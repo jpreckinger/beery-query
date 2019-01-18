@@ -13,7 +13,7 @@ class Header extends Component {
 
     return (
       <div>
-        <AppBar className={classes.bar} position="fixed">
+        <AppBar className={classes.bar} >
           <Toolbar>
             <Typography className={classes.title} variant="h4">
               Beery_Query
@@ -27,7 +27,6 @@ class Header extends Component {
 
 const styles = {
   bar: {
-    overflow: 'hidden',
     backgroundColor: 'maroon',
   },
   title: {
