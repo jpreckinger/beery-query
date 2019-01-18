@@ -71,12 +71,12 @@ class Search extends Component {
           {this.state.results &&
             <div className={classes.selection}>
               {this.state.results.map(beer => (
-                <Paper key={beer.name}>
+                <Paper key={beer.name} style={{margin: '10px'}}>
                   <Card  
                   className={classes.card} 
                   onClick={() => this.handleClick(beer)}
                   >
-                      <h2>{beer.name}</h2>
+                      <h2 style={{display: 'flex', justifyContent: 'center', margin: '10px' }}>{beer.name}</h2>
                   </Card>
                 </Paper>
               ))}
@@ -86,17 +86,20 @@ class Search extends Component {
         <div className='position'>
           {this.state.selectedBeer &&
           <div className='selected'>
-            <img 
-            src={this.state.selectedBeer.image_url}
-            alt={this.state.selectedBeer.description} 
-            height="200" width="auto"/>
-            <ul>
-              <li>{this.state.selectedBeer.name}</li>
-              <li>{this.state.selectedBeer.tagline}</li>
-              <li>Abv: {this.state.selectedBeer.abv}</li>
-              {/* <li>{this.state.selectedBeer}</li>
-              <li>{this.state.selectedBeer}</li> */}
-            </ul>
+            <Paper>
+              <Card className={classes.single}>
+                <img 
+                src={this.state.selectedBeer.image_url}
+                alt={this.state.selectedBeer.description} 
+                height="200" width="auto" style={{margin: 'auto', marginTop: '15px'}}/>
+                <ul>
+                  <li>{this.state.selectedBeer.name}</li>
+                  <li>{this.state.selectedBeer.tagline}</li>
+                  <li>Abv: {this.state.selectedBeer.abv}</li>
+                  <li>First Brewed: {this.state.selectedBeer.first_brewed}</li>
+                </ul>
+              </Card>
+            </Paper>
           </div>
           }
         </div>
@@ -111,19 +114,19 @@ const styles = {
   },
   card: {
     width: 200,
-    height: 200,
-  },
-  list: {
-    display: 'flex',
-    justifyContent: 'flexStart'
+    height: 150,
+    backgroundColor: 'blanchedalmond'
   },
   selection: {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
   },
-  display: {
-    display: 'inline-block'
+  single: {
+    backgroundColor: 'blanchedalmond',
+    minWidth: 300,
+    display: 'inline-grid',
+    justifyContent: 'center'
   }
 
 };
